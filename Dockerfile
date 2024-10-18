@@ -25,6 +25,7 @@ WORKDIR /app
 # Copiar o JAR construído do estágio de construção
 COPY --from=builder /app/build/libs/*.jar /app/app.jar
 
+RUN ls -la /app
 # Configurar o comando de inicialização
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 
