@@ -30,5 +30,5 @@ WORKDIR /app
 EXPOSE 8080
 
 # Configurar o comando de inicialização
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 
