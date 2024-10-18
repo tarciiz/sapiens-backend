@@ -24,7 +24,7 @@ public class AuthController {
     private final AuthService authService;
     private final AuthenticationManager authenticationManager;
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public ResponseEntity<?> validate() {
         return new ResponseEntity<>("Hello World!", HttpStatus.OK);
     }
