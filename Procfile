@@ -1,1 +1,1 @@
-web: java -jar ./app/app.jar
+web: java -jar /builder/workspace/app/app.jar
