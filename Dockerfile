@@ -29,4 +29,4 @@ COPY --from=builder /app/build/libs/*.jar /app/app.jar
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 
 # Expor a porta na qual a aplicação irá rodar
-EXPOSE 8000
+EXPOSE 8080
