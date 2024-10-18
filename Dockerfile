@@ -1,5 +1,5 @@
 # Usar uma imagem base mais leve do OpenJDK 21
-FROM openjdk:17-jdk-slim AS builder
+FROM openjdk:21-jdk-slim AS builder
 
 # Definir o diretório de trabalho
 WORKDIR /app
@@ -17,7 +17,7 @@ RUN chmod +x gradlew
 RUN ./gradlew build --no-daemon --exclude-task test
 
 # Usar uma imagem base do OpenJDK 21 mais leve para o ambiente de produção
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:21-jre-alpine
 
 # Definir o diretório de trabalho
 WORKDIR /app
