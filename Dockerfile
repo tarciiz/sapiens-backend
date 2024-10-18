@@ -27,7 +27,7 @@ WORKDIR /app
 
 
 # Expor a porta na qual a aplicação irá rodar
-EXPOSE 8080
+EXPOSE 8000
 
 # Configurar o comando de inicialização
 ENTRYPOINT ["java", "-jar", "app.jar"]
