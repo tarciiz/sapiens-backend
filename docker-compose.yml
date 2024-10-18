@@ -18,3 +18,5 @@ services:
         reservations:
           cpus: "0.5"       # Reserva de CPU, 0.5 significa meio CPU
           memory: 512M      # Reserva de memória
+    volumes:
+         - /app
