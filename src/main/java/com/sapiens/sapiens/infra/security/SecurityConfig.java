@@ -34,6 +34,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/auth/change-password").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/auth/hello").permitAll()
 
+
                         // Admin Controller
                         .requestMatchers("/api/admin/**").hasAnyRole("ADMIN", "SUPERADMIN")
 
