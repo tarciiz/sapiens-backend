@@ -1,1 +1,1 @@
-web: ./gradlew bootRun
+web: java -jar /app/app.jar
