@@ -23,11 +23,10 @@ FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 # Copiar o JAR construído do estágio de construção
-COPY --from=builder /app/build/libs/*.jar /app/app.jar
+COPY --from=builder /app/build/libs/*.jar app.jar
 
-RUN ls -la /app
 # Configurar o comando de inicialização
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "app.jar"]
 
 # Expor a porta na qual a aplicação irá rodar
-EXPOSE 8000
+EXPOSE 8080
