@@ -32,6 +32,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/auth/register").hasAnyRole("ADMIN", "SUPERADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/auth/change-password").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/auth").permitAll()
 
                         // Admin Controller
                         .requestMatchers("/api/admin/**").hasAnyRole("ADMIN", "SUPERADMIN")
