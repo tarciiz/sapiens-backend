@@ -19,14 +19,16 @@ RUN ./gradlew build --no-daemon --exclude-task test
 # Usar uma imagem base do OpenJDK 21 mais leve para o ambiente de produção
 FROM eclipse-temurin:21-jre-alpine
 
+# Copiar o JAR construído do estágio de construção
+COPY --from=builder /app/build/libs/*.jar /app/app.jar
+
 # Definir o diretório de trabalho
 WORKDIR /app
 
-# Copiar o JAR construído do estágio de construção
-COPY --from=builder /app/build/libs/*.jar app.jar
-
-# Configurar o comando de inicialização
-CMD ["java", "-jar", "app.jar"]
 
 # Expor a porta na qual a aplicação irá rodar
 EXPOSE 8080
+
+# Configurar o comando de inicialização
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
